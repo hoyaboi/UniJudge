@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Results output
+results/*
+!results/.gitkeep
+
+# Comparison output (local only)
+crescendo_cat_judge_comparison/
+
+# API keys
+.env
+.env.*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
