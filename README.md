@@ -54,19 +54,18 @@ results/
 ## 3. Running a judge
 
 ```bash
-python judge_cat.py <experiment> <judge>
+python judge_cat.py <experiment>
 ```
 
 - Loads all `.json` files from `results/<experiment>/results/`.  
-- Runs the given **judge** on each task (query, response) and writes **one output file per input file** (same filename) under `results/<experiment>/eval_by_<judge>/`.
+- Runs the **cat** judge on each task (query, response) and writes **one output file per input file** (same filename) under `results/<experiment>/eval_by_cat/`.
 
-**Examples:**  
-- `python judge_cat.py cat cat` → load `results/cat/results/`, evaluate with **cat** judge → save to `results/cat/eval_by_cat/`.  
-- `python judge_cat.py cat crescendo` → same input, **crescendo** judge → save to `results/cat/eval_by_crescendo/` (crescendo judge not implemented yet).
+**Example:**  
+- `python judge_cat.py cat` → load `results/cat/results/`, evaluate with **cat** judge → save to `results/cat/eval_by_cat/`.
 
 **Options:** `--judge-model` (LLM used by the judge, default `gpt-4o-mini`), `--limit N` (max tasks per file, for testing), `--workers N` (number of files to process in parallel, default 1).
 
-**Available judges:** only **cat** for now; **crescendo** is planned.
+**Other judges:** `python judge_harmbench.py <experiment>` for the HarmBench classifier; output goes to `results/<experiment>/eval_by_harmbench/`.
 
 ## 4. Output format (eval_by_*)
 
